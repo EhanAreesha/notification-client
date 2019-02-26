@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg bg-info">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="display: unset !important;">
+        <ul class="nav nav-pills mr-auto justify-content-end">
+            <li class="text-right dropdown pr-0" style="margin-right:120px;">
+                <a class="nav-link text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bell"></i><span class="badge">{{notificationObj.unreadMessage}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<section>
+    <div class="container">
+        <div class="col-12 max-widthchatBox mx-auto">
+            <div class="row sticky-top">
+                <div class="message-header bg-gray">
+                    <div class="float-left  col-md-9 col-9">
+                        <h6 class="text-left pt-2">Message</h6>
+                    </div>
+                    <div class="col-md-3 float-right col-3">
+                        <h6 class="text-right pt-2">Date</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <ul class="chat">
+                    <li *ngFor="let temp of notificationObj.notificationsTemp; let i = index;"class="chat-box">
+                        <div class="col-md-10 col-9 float-left  pt-3">
+                            <p class="mb-0 single-line width550" [id]="temp.Id" (click)="collapseMessage(temp)">
+                                <span>{{temp.Message}}</span>
+                            </p>
+                        </div>
+                        <div class="col-md-2 col-3 float-right pt-3">
+                           <p class="text-right"><span><small>{{temp.CreatedDate}}</small></span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 max-widthchatBox mx-auto" style="margin-bottom: 50px !important;">
+            <div class="row">
+                <p-dataTable [value]="notificationObj.notificationsTemp" [lazy]="true" [paginator]="true"
+                [rows]="2" [totalRecords]="notificationObj.totalRecords" (onLazyLoad)="loadNotifications($event)">
+                </p-dataTable>
+            </div>
+        </div>
+    </div>
+</section>

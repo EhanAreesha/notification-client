@@ -1,0 +1,28 @@
+<nav class="navbar bg-info">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="display: unset !important;">
+        <ul class="nav nav-pills mr-auto justify-content-end">
+            <li class="nav-item dropdown"  style="margin-right:120px;">
+                <a class="nav-link text-light dropdown-toggle-1  p-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bell"></i><span class="badge" >{{home.unreadMessage}}</span>
+                </a>
+                <div class="dropdown-menu notification-head">
+                    <ul class="notification-dropdown">
+                        <li *ngFor="let notification of home.notifications; let i = index;" class="notification-box">
+                            <div class="row">
+                                <div class="col-12 px-4">
+                                    <small class="text-warning">{{notification.CreatedDate}}</small>
+                                    <p class="mb-0 single-line" [id]="notification.Id" (click)="collapseMessage(notification)">
+                                        <span>{{notification.Message}}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                <div class="notification-footer bg-dark text-center">
+                    <a href="notifications" class="text-light">View All</a>
+                </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

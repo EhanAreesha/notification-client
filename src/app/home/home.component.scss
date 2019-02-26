@@ -1,0 +1,93 @@
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+    background-color: #17A2B8;
+}
+.notification-head{
+    position:absolute;
+    left:-110px;
+    width:240px;
+    top: 29px;
+    font-size: 14px;
+    box-shadow: 0px 5px 7px -1px #c1c1c1;
+    padding: 0;
+}
+.notification-head:before{
+    content:'.';
+    display:block;
+    position:absolute;
+    margin-left:-12px;
+    left:50%;
+    top:-18px;
+    width:0;
+    height:0;
+    color:transparent;
+    border:10px solid black;
+    border-color:transparent transparent white;
+}
+.notification-dropdown{
+    width:240px;
+    max-height:250px;
+    font-size: 14px;
+    padding: 0px;
+    list-style-type: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.notification-footer{
+    padding:5px 15px;
+    border-radius: 0px 0px 3px 3px;
+    cursor: pointer;
+    position: fixed;
+    width: 240px;
+}
+.notification-box{
+    padding: 10px 1px 0 0;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+.notification-box:hover{
+    background-color: rgba(000,000,000,.1)
+}
+.single-line {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 5px;
+}
+.bg-gray{
+    background-color: #eee;
+}
+.badge {
+    position: absolute;
+    left: 9px;
+    top: -6px;
+    min-width: 18px;
+    min-height: 18px;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -js-display: flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    padding: 0 5px 0 6px;
+    background-color: red;
+    color: #fff;
+}
+/*@media (max-width: 480px) {*/
+     /*.notification-dropdown{*/
+         /*width: 100vh;*/
+     /*}*/
+    /*.notification-footer{*/
+        /*width: 100vh;*/
+    /*}*/
+ /*}*/
